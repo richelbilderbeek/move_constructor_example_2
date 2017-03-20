@@ -27,8 +27,6 @@ install:
   - sudo pip install codecov
   # OCLint
   - ./install_oclint
-  # Other GitHubs
-  - ./download_other_githubs
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
@@ -48,7 +46,7 @@ script:
   - make clean
   - qmake -qt=qt5
   - make release
-  - ./move_constructor_example_2
+  - time ./move_constructor_example_2
   - gprof move_constructor_example_2 > gprof.log
   - head gprof.log -n 100
   # cppcheck
