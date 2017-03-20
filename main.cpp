@@ -3,7 +3,7 @@
 #include <utility>
 #include <vector>
 
-struct A{ std::array<int, 100> a; };
+struct A{ int a; };
 struct B{ int b; };
 struct C{ int c; };
 struct D{ int d; };
@@ -35,7 +35,12 @@ public:
 
 int main()
 {
-  const alpha a(std::vector<A>(100));
-  const beta b(std::vector<B>(100));
-  const gamma c(std::vector<C>(100));
+  for (int i=0; i!=1000; ++i)
+  {
+    const alpha a(std::vector<A>(1'000'000));
+    const beta b(std::vector<B>(1'000'000));
+    const gamma c(std::vector<C>(1'000'000));
+    assert(a.m_as.size() == b.m_bs.size());
+    assert(b.m_bs.size() == c.m_cs.size());
+  }
 }
