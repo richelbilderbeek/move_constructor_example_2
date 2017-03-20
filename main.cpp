@@ -35,7 +35,7 @@ public:
 
 int main()
 {
-  for (int i=0; i!=100; ++i)
+  for (int i=0; i!=1000; ++i)
   {
     const alpha a(std::vector<A>(1'000'000));
     const beta b(std::vector<B>(1'000'000));
@@ -43,7 +43,7 @@ int main()
     assert(a.m_as.size() == b.m_bs.size());
     assert(b.m_bs.size() == c.m_cs.size());
   }
-  for (int i=0; i!=100; ++i)
+  for (int i=0; i!=1000; ++i)
   {
     const std::vector<A> as(1'000'000);
     const std::vector<B> bs(1'000'000);
